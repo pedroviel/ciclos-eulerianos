@@ -55,7 +55,7 @@ public class Main {
     }
 
     private static void imprimirAnaliseEuleriana(String nome, Grafo g, VerificadorEuleriano verificador) {
-        System.out.println("\n--- Análise Euleriana: " + nome + " ---");
+        System.out.println("\n" + nome);
         System.out.println("Ciclo Euleriano: " + (verificador.euleriano(g) ? "Possui" : "Não possui"));
         System.out.println("Caminho Euleriano (Semi): " + (verificador.semiEuleriano(g) ? "Possui" : "Não possui"));
     }

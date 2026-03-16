@@ -46,7 +46,7 @@ public class VerificadorEuleriano {
         if (verticeInicial == -1) return true;
 
         Set<Integer> visitados = new HashSet<>();
-        dfs(g, verticeInicial, visitados);
+        buscaEmProfundiade(g, verticeInicial, visitados);
 
         for (int v : g.vertices()) {
             if (g.grau(v) > 0 && !visitados.contains(v)) {
@@ -56,11 +56,11 @@ public class VerificadorEuleriano {
         return true;
     }
 
-    private void dfs(Grafo g, int v, Set<Integer> visitados) {
+    private void buscaEmProfundiade(Grafo g, int v, Set<Integer> visitados) {
         visitados.add(v);
         for (int u : g.vertices()) {
             if (g.saoAdjacentes(v, u) && !visitados.contains(u)) {
-                dfs(g, u, visitados);
+                buscaEmProfundiade(g, u, visitados);
             }
         }
     }
